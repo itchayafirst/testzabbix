@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2024-12-27T16:07:17.855883" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Zabbix" source="C:\Users\itcha\Desktop\ep01\test zabbix\test_zabbix.robot">
+<test id="s1-t1" name="Sign in zabbix - password_fail" line="77">
+<kw name="Open Website">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:18.154336" level="INFO">Opening browser 'chrome' to base url 'http://103.114.200.248/zabbix/'.</msg>
+<arg>${website}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-27T16:07:18.154103" elapsed="4.954704"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.110763" elapsed="0.070961"/>
+</kw>
+<arg>${url_zabbix}</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2024-12-27T16:07:18.153421" elapsed="5.028504"/>
+</kw>
+<kw name="Verify zabbix page">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:23.225901" level="INFO">Page title is 'zbxtest: Zabbix'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.183539" elapsed="0.042600"/>
+</kw>
+<arg>${title_zabbix}</arg>
+<status status="PASS" start="2024-12-27T16:07:23.182634" elapsed="0.043746"/>
+</kw>
+<kw name="Input Username and Password">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_user}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.228322" elapsed="0.140214"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_pass}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.368970" elapsed="0.087945"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:23.500791" level="INFO">Element 'xpath=//*[@id="name"]' is displayed.</msg>
+<arg>xpath=${xpath_user}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.457163" elapsed="0.043864"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:23.544205" level="INFO">Element 'xpath=//*[@id="password"]' is displayed.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.501307" elapsed="0.043031"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:23.545097" level="INFO">Typing text 'Admin' into text field 'xpath=//*[@id="name"]'.</msg>
+<arg>xpath=${xpath_user}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.544618" elapsed="0.159851"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:23.705102" level="INFO">Typing text 'zabbix1234' into text field 'xpath=//*[@id="password"]'.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.704713" elapsed="0.218651"/>
+</kw>
+<arg>${input_user}</arg>
+<arg>${input_pass}</arg>
+<arg>${username_success}</arg>
+<arg>${password_fail}</arg>
+<status status="PASS" start="2024-12-27T16:07:23.227105" elapsed="0.696648"/>
+</kw>
+<kw name="Click Button Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Signin}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.925266" elapsed="0.071150"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:23.997357" level="INFO">Clicking button '//*[@id="enter"]'.</msg>
+<arg>${btn_Signin}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T16:07:23.996840" elapsed="0.594243"/>
+</kw>
+<status status="PASS" start="2024-12-27T16:07:23.924614" elapsed="0.666737"/>
+</kw>
+<kw name="Verify Login Fail by password fail">
+<kw name="Clear Element Text" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T16:07:24.592664" elapsed="0.087155"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T16:07:24.680077" elapsed="0.024055"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:24.722897" level="INFO">Element '//*[@id="password"]' is displayed.</msg>
+<arg>${xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T16:07:24.704393" elapsed="0.018659"/>
+</kw>
+<arg>${input_pass}</arg>
+<status status="PASS" start="2024-12-27T16:07:24.591965" elapsed="0.131289"/>
+</kw>
+<kw name="Verify Login Fail by password_fail2">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T16:07:24.724162" elapsed="0.027823"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T16:07:24.753167" level="INFO">Verifying element '//*/div[2]/form/ul/li[1]/div' contains exact text 'Incorrect user name or password or account is temporarily blocked.'.</msg>
+<arg>${xpath}</arg>
+<arg>${error_message_password}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-12-27T16:07:24.752565" elapsed="0.043485"/>
+</kw>
+<arg>//*/div[2]/form/ul/li[1]/div</arg>
+<status status="PASS" start="2024-12-27T16:07:24.723726" elapsed="0.072504"/>
+</kw>
+<tag>Pass</tag>
+<status status="PASS" start="2024-12-27T16:07:18.152679" elapsed="6.643940"/>
+</test>
+<status status="PASS" start="2024-12-27T16:07:17.857315" elapsed="6.940801"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Pass</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Zabbix">Test Zabbix</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

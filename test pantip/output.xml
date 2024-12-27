@@ -1,0 +1,830 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2024-12-27T15:06:17.369006" rpa="false" schemaversion="5">
+<suite id="s1" name="First Robot" source="C:\Users\itcha\Desktop\ep01\test pantip\first_robot.robot">
+<test id="s1-t1" name="Login Pantip - Verify account Success" line="77">
+<kw name="Open Website">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:17.740831" level="INFO">Opening browser 'chrome' to base url 'https://pantip.com/login?redirect=aHR0cHM6Ly9wYW50aXAuY29tLw=='.</msg>
+<arg>${website}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-27T15:06:17.740603" elapsed="4.203050"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-27T15:06:21.943983" elapsed="0.131849"/>
+</kw>
+<arg>${url_pantip}</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2024-12-27T15:06:17.739962" elapsed="4.336470"/>
+</kw>
+<kw name="Verify Pantip page">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:22.099767" level="INFO">Page title is 'เข้าสู่ระบบ - Pantip'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.077536" elapsed="0.022553"/>
+</kw>
+<arg>${title_pantip}</arg>
+<status status="PASS" start="2024-12-27T15:06:22.077074" elapsed="0.023421"/>
+</kw>
+<kw name="Input Username and Password">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_user}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.106192" elapsed="0.068863"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_pass}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.175438" elapsed="0.034658"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:22.305297" level="INFO">Element 'xpath=//*[@id="member_email"]' is displayed.</msg>
+<arg>xpath=${xpath_user}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.210306" elapsed="0.095092"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:22.321313" level="INFO">Element 'xpath=//*[@id="member_password"]' is displayed.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.305588" elapsed="0.015843"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:22.321872" level="INFO">Typing text 'itchaya1912@gmail.com' into text field 'xpath=//*[@id="member_email"]'.</msg>
+<arg>xpath=${xpath_user}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.321601" elapsed="0.291181"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:22.614565" level="INFO">Typing text 'Fk47031516' into text field 'xpath=//*[@id="member_password"]'.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.613572" elapsed="0.180483"/>
+</kw>
+<arg>${input_user}</arg>
+<arg>${input_pass}</arg>
+<arg>${username_success}</arg>
+<arg>${password_success}</arg>
+<status status="PASS" start="2024-12-27T15:06:22.103419" elapsed="0.690757"/>
+</kw>
+<kw name="Click Button Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.794741" elapsed="0.023687"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:22.818848" level="INFO">Clicking button '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.818607" elapsed="0.103267"/>
+</kw>
+<status status="PASS" start="2024-12-27T15:06:22.794495" elapsed="0.127509"/>
+</kw>
+<kw name="Verify Login account Success">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:06:22.922807" elapsed="2.519525"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:25.462262" level="INFO">Element '//*[@id="ptContainerMain"]/div[7]/div/ul[1]/li[1]/a/span[2]' is displayed.</msg>
+<arg>${xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:06:25.442642" elapsed="0.019789"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:25.463019" level="INFO">Clicking element '//*[@id="__next"]/div/div/div/div[1]/div/ul[2]/a[6]/li'.</msg>
+<arg>${btnuser_avatar}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:06:25.462675" elapsed="0.280464"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:25.744188" level="INFO">Clicking element '//*[@id="ptListDropdownMenu"]/div/div[2]'.</msg>
+<arg>${manu_จัดการข้อมูลส่วนตัว}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:06:25.743664" elapsed="0.730101"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:06:26.474203" level="INFO">Verifying element '//*[@id="main-body-content"]/div[4]/div[2]/div[1]/div[3]/div/p[1]' contains exact text 'itchaya1912@gmail.com เปลี่ยนอีเมล'.</msg>
+<arg>${ยืนยัน_email}</arg>
+<arg>${message_ยืนยัน_email}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-12-27T15:06:26.473947" elapsed="0.033428"/>
+</kw>
+<arg>${user_pantip}</arg>
+<status status="PASS" start="2024-12-27T15:06:22.922462" elapsed="3.585123"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-27T15:07:26.508420" level="INFO">Slept 1 minute.</msg>
+<arg>60s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-27T15:06:26.507928" elapsed="60.000613"/>
+</kw>
+<tag>Pass</tag>
+<status status="PASS" start="2024-12-27T15:06:17.739315" elapsed="68.769661"/>
+</test>
+<test id="s1-t2" name="Login Pantip - click botton" line="86">
+<kw name="Open Website">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:07:26.511745" level="INFO">Opening browser 'chrome' to base url 'https://pantip.com/login?redirect=aHR0cHM6Ly9wYW50aXAuY29tLw=='.</msg>
+<arg>${website}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-27T15:07:26.511385" elapsed="5.033505"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-27T15:07:31.545202" elapsed="0.078270"/>
+</kw>
+<arg>${url_pantip}</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2024-12-27T15:07:26.510959" elapsed="5.112749"/>
+</kw>
+<kw name="Verify Pantip page">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:07:31.635583" level="INFO">Page title is 'เข้าสู่ระบบ - Pantip'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-12-27T15:07:31.624935" elapsed="0.010991"/>
+</kw>
+<arg>${title_pantip}</arg>
+<status status="PASS" start="2024-12-27T15:07:31.624273" elapsed="0.011803"/>
+</kw>
+<kw name="Input Username and Password">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_user}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:07:31.637079" elapsed="0.033427"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_pass}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:07:31.670782" elapsed="0.036467"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:07:31.747560" level="INFO">Element 'xpath=//*[@id="member_email"]' is displayed.</msg>
+<arg>xpath=${xpath_user}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:07:31.707590" elapsed="0.040978"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:07:31.831971" level="INFO">Element 'xpath=//*[@id="member_password"]' is displayed.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:07:31.750766" elapsed="0.081562"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:07:31.834218" level="INFO">Typing text 'itchaya1912@gmail.com' into text field 'xpath=//*[@id="member_email"]'.</msg>
+<arg>xpath=${xpath_user}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:07:31.833012" elapsed="0.403004"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:07:32.237040" level="INFO">Typing text 'Fk47031516' into text field 'xpath=//*[@id="member_password"]'.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:07:32.236376" elapsed="0.334086"/>
+</kw>
+<arg>${input_user}</arg>
+<arg>${input_pass}</arg>
+<arg>${username_success}</arg>
+<arg>${password_success}</arg>
+<status status="PASS" start="2024-12-27T15:07:31.636487" elapsed="0.934550"/>
+</kw>
+<kw name="Click Button Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:07:32.573285" elapsed="0.052257"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:07:32.626449" level="INFO">Clicking button '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:07:32.625938" elapsed="0.249531"/>
+</kw>
+<status status="PASS" start="2024-12-27T15:07:32.572393" elapsed="0.303335"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-27T15:08:32.877051" level="INFO">Slept 1 minute.</msg>
+<arg>60s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-27T15:07:32.876292" elapsed="60.000934"/>
+</kw>
+<tag>Pass</tag>
+<status status="PASS" start="2024-12-27T15:07:26.510313" elapsed="66.367345"/>
+</test>
+<test id="s1-t3" name="Login Pantip - username_fail1" line="93">
+<kw name="Open Website">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:32.880740" level="INFO">Opening browser 'chrome' to base url 'https://pantip.com/login?redirect=aHR0cHM6Ly9wYW50aXAuY29tLw=='.</msg>
+<arg>${website}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-27T15:08:32.880314" elapsed="5.008927"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-27T15:08:37.889707" elapsed="0.131096"/>
+</kw>
+<arg>${url_pantip}</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2024-12-27T15:08:32.879733" elapsed="5.141710"/>
+</kw>
+<kw name="Verify Pantip page">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:38.062778" level="INFO">Page title is 'เข้าสู่ระบบ - Pantip'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-12-27T15:08:38.027346" elapsed="0.035842"/>
+</kw>
+<arg>${title_pantip}</arg>
+<status status="PASS" start="2024-12-27T15:08:38.024183" elapsed="0.039615"/>
+</kw>
+<kw name="Input Username and Password">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_user}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:38.069100" elapsed="0.122426"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_pass}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:38.191999" elapsed="0.099324"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:38.327704" level="INFO">Element 'xpath=//*[@id="member_email"]' is displayed.</msg>
+<arg>xpath=${xpath_user}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:38.291794" elapsed="0.036069"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:38.364451" level="INFO">Element 'xpath=//*[@id="member_password"]' is displayed.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:38.328186" elapsed="0.036499"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:38.365604" level="INFO">Typing text 'itchaya1913@gmail.com' into text field 'xpath=//*[@id="member_email"]'.</msg>
+<arg>xpath=${xpath_user}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:08:38.365026" elapsed="0.493845"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:38.859564" level="INFO">Typing text 'Fk47031516' into text field 'xpath=//*[@id="member_password"]'.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:08:38.859133" elapsed="0.274010"/>
+</kw>
+<arg>${input_user}</arg>
+<arg>${input_pass}</arg>
+<arg>${username_fail}</arg>
+<arg>${password_success}</arg>
+<status status="PASS" start="2024-12-27T15:08:38.065259" elapsed="1.068194"/>
+</kw>
+<kw name="Click Button Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:39.134943" elapsed="0.052799"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:39.188516" level="INFO">Clicking button '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:08:39.188148" elapsed="0.154841"/>
+</kw>
+<status status="PASS" start="2024-12-27T15:08:39.134390" elapsed="0.208790"/>
+</kw>
+<kw name="Verify Login Fail by email fail">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:39.344637" elapsed="0.956615"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:40.319692" level="INFO">Element '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/section/label[1]/div[2]' is displayed.</msg>
+<arg>${xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:40.302102" elapsed="0.017690"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:40.320196" level="INFO">Verifying element '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/section/label[1]/div[2]' contains exact text 'อีเมลหรือนามแฝงที่คุณป้อน ไม่ตรงกับบัญชีใดๆ สมัครใช้งานบัญชี'.</msg>
+<arg>${xpath}</arg>
+<arg>${error_message_email}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-12-27T15:08:40.319965" elapsed="0.026209"/>
+</kw>
+<arg>${txt_emailfail1}</arg>
+<status status="PASS" start="2024-12-27T15:08:39.343785" elapsed="1.002539"/>
+</kw>
+<tag>Pass</tag>
+<status status="PASS" start="2024-12-27T15:08:32.878705" elapsed="7.468034"/>
+</test>
+<test id="s1-t4" name="Login Pantip - password_fail1" line="101">
+<kw name="Open Website">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:40.349631" level="INFO">Opening browser 'chrome' to base url 'https://pantip.com/login?redirect=aHR0cHM6Ly9wYW50aXAuY29tLw=='.</msg>
+<arg>${website}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-27T15:08:40.349285" elapsed="5.610355"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-27T15:08:45.960409" elapsed="0.143525"/>
+</kw>
+<arg>${url_pantip}</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2024-12-27T15:08:40.348604" elapsed="5.755728"/>
+</kw>
+<kw name="Verify Pantip page">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:46.141635" level="INFO">Page title is 'เข้าสู่ระบบ - Pantip'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-12-27T15:08:46.105988" elapsed="0.036017"/>
+</kw>
+<arg>${title_pantip}</arg>
+<status status="PASS" start="2024-12-27T15:08:46.105136" elapsed="0.037115"/>
+</kw>
+<kw name="Input Username and Password">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_user}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:46.144330" elapsed="0.193418"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_pass}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:46.338321" elapsed="0.092605"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:46.507879" level="INFO">Element 'xpath=//*[@id="member_email"]' is displayed.</msg>
+<arg>xpath=${xpath_user}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:46.431320" elapsed="0.076772"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:46.707236" level="INFO">Element 'xpath=//*[@id="member_password"]' is displayed.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:46.508469" elapsed="0.199061"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:46.708549" level="INFO">Typing text 'itchaya1912@gmail.com' into text field 'xpath=//*[@id="member_email"]'.</msg>
+<arg>xpath=${xpath_user}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:08:46.707956" elapsed="0.306456"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:47.015451" level="INFO">Typing text '12345678' into text field 'xpath=//*[@id="member_password"]'.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:08:47.014817" elapsed="0.341208"/>
+</kw>
+<arg>${input_user}</arg>
+<arg>${input_pass}</arg>
+<arg>${username_success}</arg>
+<arg>${password_fail}</arg>
+<status status="PASS" start="2024-12-27T15:08:46.142978" elapsed="1.213734"/>
+</kw>
+<kw name="Click Button Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:47.361358" elapsed="0.148788"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:47.512233" level="INFO">Clicking button '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:08:47.510889" elapsed="0.342785"/>
+</kw>
+<status status="PASS" start="2024-12-27T15:08:47.359568" elapsed="0.494427"/>
+</kw>
+<kw name="Verify Login Fail by email fail">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:52.169172" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.140)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7877BFB05+28789]
+	(No symbol) [0x00007FF7877286E0]
+	(No symbol) [0x00007FF7875C592A]
+	(No symbol) [0x00007FF78759F505]
+	(No symbol) [0x00007FF787646477]
+	(No symbol) [0x00007FF78765EF42]
+	(No symbol) [0x00007FF78763F1E3]
+	(No symbol) [0x00007FF78760A938]
+	(No symbol) [0x00007FF78760BAA1]
+	GetHandleVerifier [0x00007FF787AF933D+3410093]
+	GetHandleVerifier [0x00007FF787B0E7DD+3497293]
+	GetHandleVerifier [0x00007FF787B02A73+3448803]
+	GetHandleVerifier [0x00007FF787887BBB+848171]
+	(No symbol) [0x00007FF787733C3F]
+	(No symbol) [0x00007FF78772F6E4]
+	(No symbol) [0x00007FF78772F87D]
+	(No symbol) [0x00007FF78771ED49]
+	BaseThreadInitThunk [0x00007FFCFE24259D+29]
+	RtlUserThreadStart [0x00007FFCFF52AF38+40]
+</msg>
+<msg time="2024-12-27T15:08:52.180093" level="FAIL">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.140)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7877BFB05+28789]
+	(No symbol) [0x00007FF7877286E0]
+	(No symbol) [0x00007FF7875C592A]
+	(No symbol) [0x00007FF78759F505]
+	(No symbol) [0x00007FF787646477]
+	(No symbol) [0x00007FF78765EF42]
+	(No symbol) [0x00007FF78763F1E3]
+	(No symbol) [0x00007FF78760A938]
+	(No symbol) [0x00007FF78760BAA1]
+	GetHandleVerifier [0x00007FF787AF933D+3410093]
+	GetHandleVerifier [0x00007FF787B0E7DD+3497293]
+	GetHandleVerifier [0x00007FF787B02A73+3448803]
+	GetHandleVerifier [0x00007FF787887BBB+848171]
+	(No symbol) [0x00007FF787733C3F]
+	(No symbol) [0x00007FF78772F6E4]
+	(No symbol) [0x00007FF78772F87D]
+	(No symbol) [0x00007FF78771ED49]
+	BaseThreadInitThunk [0x00007FFCFE24259D+29]
+	RtlUserThreadStart [0x00007FFCFF52AF38+40]
+</msg>
+<arg>${xpath}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-12-27T15:08:47.886065" elapsed="4.571337">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.140)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7877BFB05+28789]
+	(No symbol) [0x00007FF7877286E0]
+	(No symbol) [0x00007FF7875C592A]
+	(No symbol) [0x00007FF78759F505]
+	(No symbol) [0x00007FF787646477]
+	(No symbol) [0x00007FF78765EF42]
+	(No symbol) [0x00007FF78763F1E3]
+	(No symbol) [0x00007FF78760A938]
+	(No symbol) [0x00007FF78760BAA1]
+	GetHandleVerifier [0x00007FF787AF933D+3410093]
+	GetHandleVerifier [0x00007FF787B0E7DD+3497293]
+	GetHandleVerifier [0x00007FF787B02A73+3448803]
+	GetHandleVerifier [0x00007FF787887BBB+848171]
+	(No symbol) [0x00007FF787733C3F]
+	(No symbol) [0x00007FF78772F6E4]
+	(No symbol) [0x00007FF78772F87D]
+	(No symbol) [0x00007FF78771ED49]
+	BaseThreadInitThunk [0x00007FFCFE24259D+29]
+	RtlUserThreadStart [0x00007FFCFF52AF38+40]
+</status>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-12-27T15:08:52.458545" elapsed="0.000168"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>${error_message_email}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-12-27T15:08:52.459166" elapsed="0.000103"/>
+</kw>
+<arg>${txt_emailfail1}</arg>
+<status status="FAIL" start="2024-12-27T15:08:47.883572" elapsed="4.576481">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.140)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7877BFB05+28789]
+	(No symbol) [0x00007FF7877286E0]
+	(No symbol) [0x00007FF7875C592A]
+	(No symbol) [0x00007FF78759F505]
+	(No symbol) [0x00007FF787646477]
+	(No symbol) [0x00007FF78765EF42]
+	(No symbol) [0x00007FF78763F1E3]
+	(No symbol) [0x00007FF78760A938]
+	(No symbol) [0x00007FF78760BAA1]
+	GetHandleVerifier [0x00007FF787AF933D+3410093]
+	GetHandleVerifier [0x00007FF787B0E7DD+3497293]
+	GetHandleVerifier [0x00007FF787B02A73+3448803]
+	GetHandleVerifier [0x00007FF787887BBB+848171]
+	(No symbol) [0x00007FF787733C3F]
+	(No symbol) [0x00007FF78772F6E4]
+	(No symbol) [0x00007FF78772F87D]
+	(No symbol) [0x00007FF78771ED49]
+	BaseThreadInitThunk [0x00007FFCFE24259D+29]
+	RtlUserThreadStart [0x00007FFCFF52AF38+40]
+</status>
+</kw>
+<tag>fail</tag>
+<status status="FAIL" start="2024-12-27T15:08:40.347934" elapsed="12.113119">NoSuchWindowException: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.140)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7877BFB05+28789]
+	(No symbol) [0x00007FF7877286E0]
+	(No symbol) [0x00007FF7875C592A]
+	(No symbol) [0x00007FF78759F505]
+	(No symbol) [0x00007FF787646477]
+	(No symbol) [0x00007FF78765EF42]
+	(No symbol) [0x00007FF78763F1E3]
+	(No symbol) [0x00007FF78760A938]
+	(No symbol) [0x00007FF78760BAA1]
+	GetHandleVerifier [0x00007FF787AF933D+3410093]
+	GetHandleVerifier [0x00007FF787B0E7DD+3497293]
+	GetHandleVerifier [0x00007FF787B02A73+3448803]
+	GetHandleVerifier [0x00007FF787887BBB+848171]
+	(No symbol) [0x00007FF787733C3F]
+	(No symbol) [0x00007FF78772F6E4]
+	(No symbol) [0x00007FF78772F87D]
+	(No symbol) [0x00007FF78771ED49]
+	BaseThreadInitThunk [0x00007FFCFE24259D+29]
+	RtlUserThreadStart [0x00007FFCFF52AF38+40]
+</status>
+</test>
+<test id="s1-t5" name="Login Pantip - password_fail2" line="110">
+<kw name="Open Website">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:52.474187" level="INFO">Opening browser 'chrome' to base url 'https://pantip.com/login?redirect=aHR0cHM6Ly9wYW50aXAuY29tLw=='.</msg>
+<arg>${website}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-27T15:08:52.473265" elapsed="5.725712"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-27T15:08:58.199462" elapsed="0.162908"/>
+</kw>
+<arg>${url_pantip}</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2024-12-27T15:08:52.471598" elapsed="5.891317"/>
+</kw>
+<kw name="Verify Pantip page">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:58.397703" level="INFO">Page title is 'เข้าสู่ระบบ - Pantip'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-12-27T15:08:58.366616" elapsed="0.031327"/>
+</kw>
+<arg>${title_pantip}</arg>
+<status status="PASS" start="2024-12-27T15:08:58.365698" elapsed="0.032645"/>
+</kw>
+<kw name="Input Username and Password">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_user}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:58.400980" elapsed="0.146783"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_pass}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:58.548299" elapsed="0.114733"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:58.895332" level="INFO">Element 'xpath=//*[@id="member_email"]' is displayed.</msg>
+<arg>xpath=${xpath_user}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:58.663573" elapsed="0.232080"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:58.963798" level="INFO">Element 'xpath=//*[@id="member_password"]' is displayed.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:08:58.896231" elapsed="0.067922"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:58.965716" level="INFO">Typing text 'itchaya1912@gmail.com' into text field 'xpath=//*[@id="member_email"]'.</msg>
+<arg>xpath=${xpath_user}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:08:58.964735" elapsed="0.600574"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:08:59.567068" level="INFO">Typing text '12345678' into text field 'xpath=//*[@id="member_password"]'.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:08:59.565938" elapsed="0.439357"/>
+</kw>
+<arg>${input_user}</arg>
+<arg>${input_pass}</arg>
+<arg>${username_success}</arg>
+<arg>${password_fail}</arg>
+<status status="PASS" start="2024-12-27T15:08:58.399340" elapsed="1.606315"/>
+</kw>
+<kw name="Click Button Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:09:00.007285" elapsed="0.078398"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:00.087013" level="INFO">Clicking button '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:09:00.086278" elapsed="0.295178"/>
+</kw>
+<status status="PASS" start="2024-12-27T15:09:00.006495" elapsed="0.375272"/>
+</kw>
+<kw name="Verify Login Fail by password fail">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:09:00.383284" elapsed="0.819069"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:01.229045" level="INFO">Element '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/section/label[2]/div' is displayed.</msg>
+<arg>${xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:09:01.202628" elapsed="0.026616"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:01.230076" level="INFO">Verifying element '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/section/label[2]/div' contains exact text 'รหัสผ่านไม่ถูกต้อง ลองอีกครั้งหรือคลิก “ลืมรหัสผ่าน“ เพื่อรีเซ็ตรหัส'.</msg>
+<arg>${xpath}</arg>
+<arg>${error_message_password}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="PASS" start="2024-12-27T15:09:01.229729" elapsed="0.036504"/>
+</kw>
+<arg>${txt_passfail}</arg>
+<status status="PASS" start="2024-12-27T15:09:00.382415" elapsed="0.884123"/>
+</kw>
+<tag>Pass</tag>
+<status status="PASS" start="2024-12-27T15:08:52.469745" elapsed="8.797160"/>
+</test>
+<test id="s1-t6" name="Login Pantip - username_fail2" line="118">
+<kw name="Open Website">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:01.269210" level="INFO">Opening browser 'chrome' to base url 'https://pantip.com/login?redirect=aHR0cHM6Ly9wYW50aXAuY29tLw=='.</msg>
+<arg>${website}</arg>
+<arg>${browser}</arg>
+<arg>options=add_experimental_option("detach", True)</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-27T15:09:01.268908" elapsed="5.639654"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-12-27T15:09:06.909095" elapsed="0.245520"/>
+</kw>
+<arg>${url_pantip}</arg>
+<arg>chrome</arg>
+<status status="PASS" start="2024-12-27T15:09:01.268420" elapsed="5.886702"/>
+</kw>
+<kw name="Verify Pantip page">
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:07.244509" level="INFO">Page title is 'เข้าสู่ระบบ - Pantip'.</msg>
+<arg>${title}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2024-12-27T15:09:07.167712" elapsed="0.077099"/>
+</kw>
+<arg>${title_pantip}</arg>
+<status status="PASS" start="2024-12-27T15:09:07.165693" elapsed="0.079439"/>
+</kw>
+<kw name="Input Username and Password">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_user}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:09:07.248234" elapsed="0.094827"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${xpath_pass}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:09:07.343605" elapsed="0.062485"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:07.585247" level="INFO">Element 'xpath=//*[@id="member_email"]' is displayed.</msg>
+<arg>xpath=${xpath_user}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:09:07.406574" elapsed="0.178906"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:07.871121" level="INFO">Element 'xpath=//*[@id="member_password"]' is displayed.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:09:07.585879" elapsed="0.285526"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:07.872737" level="INFO">Typing text 'itchaya1913@gmail.com' into text field 'xpath=//*[@id="member_email"]'.</msg>
+<arg>xpath=${xpath_user}</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:09:07.871879" elapsed="0.599857"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:08.472822" level="INFO">Typing text 'Fk47031516' into text field 'xpath=//*[@id="member_password"]'.</msg>
+<arg>xpath=${xpath_pass}</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:09:08.472163" elapsed="0.453977"/>
+</kw>
+<arg>${input_user}</arg>
+<arg>${input_pass}</arg>
+<arg>${username_fail}</arg>
+<arg>${password_success}</arg>
+<status status="PASS" start="2024-12-27T15:09:07.246678" elapsed="1.679794"/>
+</kw>
+<kw name="Click Button Login">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_login}</arg>
+<arg>30s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-27T15:09:08.930369" elapsed="0.066462"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:08.997499" level="INFO">Clicking button '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/button'.</msg>
+<arg>${btn_login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-27T15:09:08.997126" elapsed="0.287375"/>
+</kw>
+<status status="PASS" start="2024-12-27T15:09:08.929468" elapsed="0.355327"/>
+</kw>
+<kw name="Verify Login Fail by password fail">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<msg time="2024-12-27T15:09:14.692003" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-201.png"&gt;&lt;img src="selenium-screenshot-201.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-12-27T15:09:14.692294" level="FAIL">Element '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/section/label[2]/div3' not visible after 5 seconds.</msg>
+<arg>${xpath}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="FAIL" start="2024-12-27T15:09:09.286409" elapsed="5.409185">Element '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/section/label[2]/div3' not visible after 5 seconds.</status>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-12-27T15:09:14.696086" elapsed="0.000094"/>
+</kw>
+<kw name="Element Text Should Be" owner="SeleniumLibrary">
+<arg>${xpath}</arg>
+<arg>${error_message_password}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<status status="NOT RUN" start="2024-12-27T15:09:14.696502" elapsed="0.000083"/>
+</kw>
+<arg>${txt_passfail}3</arg>
+<status status="FAIL" start="2024-12-27T15:09:09.285497" elapsed="5.411412">Element '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/section/label[2]/div3' not visible after 5 seconds.</status>
+</kw>
+<tag>fail</tag>
+<status status="FAIL" start="2024-12-27T15:09:01.267837" elapsed="13.429668">Element '//*[@id="__next"]/div/div/div/div[9]/div[1]/form/section/label[2]/div3' not visible after 5 seconds.</status>
+</test>
+<status status="FAIL" start="2024-12-27T15:06:17.374692" elapsed="177.324564"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="2" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="2" skip="0">fail</stat>
+<stat pass="4" fail="0" skip="0">Pass</stat>
+</tag>
+<suite>
+<stat pass="4" fail="2" skip="0" id="s1" name="First Robot">First Robot</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-12-27T15:08:52.169172" level="WARN">Keyword 'Capture Page Screenshot' could not be run on failure: Message: no such window: target window already closed
+from unknown error: web view not found
+  (Session info: chrome=131.0.6778.140)
+Stacktrace:
+	GetHandleVerifier [0x00007FF7877BFB05+28789]
+	(No symbol) [0x00007FF7877286E0]
+	(No symbol) [0x00007FF7875C592A]
+	(No symbol) [0x00007FF78759F505]
+	(No symbol) [0x00007FF787646477]
+	(No symbol) [0x00007FF78765EF42]
+	(No symbol) [0x00007FF78763F1E3]
+	(No symbol) [0x00007FF78760A938]
+	(No symbol) [0x00007FF78760BAA1]
+	GetHandleVerifier [0x00007FF787AF933D+3410093]
+	GetHandleVerifier [0x00007FF787B0E7DD+3497293]
+	GetHandleVerifier [0x00007FF787B02A73+3448803]
+	GetHandleVerifier [0x00007FF787887BBB+848171]
+	(No symbol) [0x00007FF787733C3F]
+	(No symbol) [0x00007FF78772F6E4]
+	(No symbol) [0x00007FF78772F87D]
+	(No symbol) [0x00007FF78771ED49]
+	BaseThreadInitThunk [0x00007FFCFE24259D+29]
+	RtlUserThreadStart [0x00007FFCFF52AF38+40]
+</msg>
+</errors>
+</robot>
